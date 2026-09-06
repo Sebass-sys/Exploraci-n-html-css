@@ -1,0 +1,110 @@
+header {
+  width: 98%;
+  height: 70px;
+  background-color: #6a3fb5;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 15px;
+  margin: 20px;
+}
+
+.imagenlogo {
+  height: 80px;
+  width: 200px;
+  margin-left: 20px;
+}
+
+header h1 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Segoe UI", "Trebuchet MS", sans-serif;
+  font-weight: 800;
+  font-size: 40px;
+  letter-spacing: 4px;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+  margin: 0;
+}
+
+body {
+  background-color: blueviolet;
+  margin: 0;
+}
+.botones {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.btn-plataforma {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 32px;
+  color: white;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.btn-plataforma:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.steam {
+  background-color: #171a21;
+}
+
+.playstation {
+  background-color: #003791;
+}
+
+.xbox {
+  background-color: #107c10;
+}
+.slideshow {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    height: 400px;
+    margin: 40px auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: ciclo 16s infinite; 
+}
+
+
+.slide:nth-child(1) { animation-delay: 0s; }
+.slide:nth-child(2) { animation-delay: 4s; }
+.slide:nth-child(3) { animation-delay: 8s; }
+.slide:nth-child(4) { animation-delay: 12s; }
+
+@keyframes ciclo {
+    0%   { opacity: 0; }
+    3%   { opacity: 1; }   
+    20%  { opacity: 1; }   
+    25%  { opacity: 0; }   
+    100% { opacity: 0; }    
+}
+label{
+    align-items: center;
+}
