@@ -1,12 +1,20 @@
+body {
+  background-color: #0d0b1a;
+  margin: 0;
+  color: #f0eaff;
+}
+
 header {
   width: 98%;
-  height: 70px;
-  background-color: #6a3fb5;
+  min-height: 100px;
+  background-color: #1a1330;
   display: flex;
   align-items: center;
   position: relative;
-  padding: 15px;
+  padding: 8px 15px;   
   margin: 20px;
+  border-radius: 10px;
+  border-bottom: 3px solid #00e5ff;
 }
 
 .imagenlogo {
@@ -21,17 +29,62 @@ header h1 {
   transform: translateX(-50%);
   font-family: "Segoe UI", "Trebuchet MS", sans-serif;
   font-weight: 800;
-  font-size: 40px;
-  letter-spacing: 4px;
-  color: white;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+  font-size: 54px;
+  letter-spacing: 7px;
+  color: #f0eaff;
+  text-shadow: 0 0 12px #00e5ff;
   margin: 0;
+  top: 8px;
 }
 
-body {
-  background-color: blueviolet;
-  margin: 0;
+.buscador-container {
+  position: relative;
+  width: 90%;
+  max-width: 500px;
+  margin: 30px auto 10px auto;
 }
+
+.buscador {
+  width: 100%;
+  padding: 14px 45px 14px 20px;
+  border: none;
+  border-radius: 30px;
+  background-color: #1c1630;
+  color: #f0eaff;
+  font-size: 16px;
+  outline: none;
+  box-shadow: 0 0 0 2px #ff2e88;
+  transition: box-shadow 0.3s ease;
+}
+
+.buscador::placeholder {
+  color: #a89fc4;
+}
+
+.buscador:focus {
+  box-shadow: 0 0 14px 2px #00e5ff;
+}
+
+.icono-buscar {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #a89fc4;
+  font-size: 18px;
+  pointer-events: none;
+}
+
+label {
+  display: block;
+  text-align: center;
+  color: #f0eaff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 20px;
+  text-shadow: 0 0 8px #ff2e88;
+}
+
 .botones {
   display: flex;
   justify-content: center;
@@ -56,7 +109,7 @@ body {
 
 .btn-plataforma:hover {
   transform: scale(1.1);
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 15px #00e5ff;
 }
 
 .steam {
@@ -70,41 +123,231 @@ body {
 .xbox {
   background-color: #107c10;
 }
-.slideshow {
-    position: relative;
-    width: 80%;
-    max-width: 800px;
-    height: 400px;
-    margin: 40px auto;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+
+* {
+  box-sizing: border-box;
 }
 
-.slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0;
-    animation: ciclo 16s infinite; 
+.seccion-contenido {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  width: 95%;
+  margin: 40px auto;
+  flex-wrap: wrap;
 }
 
-
-.slide:nth-child(1) { animation-delay: 0s; }
-.slide:nth-child(2) { animation-delay: 4s; }
-.slide:nth-child(3) { animation-delay: 8s; }
-.slide:nth-child(4) { animation-delay: 12s; }
-
-@keyframes ciclo {
-    0%   { opacity: 0; }
-    3%   { opacity: 1; }   
-    20%  { opacity: 1; }   
-    25%  { opacity: 0; }   
-    100% { opacity: 0; }    
+.banner-lateral {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 15px;
+  width: 220px;
+  background-color: #1c1630;
+  border: 1px solid rgba(0, 229, 255, 0.15);
+  border-radius: 10px;
+  padding: 15px;
+  color: #f0eaff;
 }
-label{
-    align-items: center;
+
+.titulo-lateral {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.tooltip-container {
+  position: relative;
+}
+
+.icono-info {
+  color: #ff2e88;
+  cursor: help;
+}
+
+.tooltip-texto {
+  position: absolute;
+  top: 130%;
+  right: 0;
+  width: 180px;
+  background-color: #2a2245;
+  border: 1px solid #00e5ff;
+  font-size: 12px;
+  font-weight: 400;
+  padding: 10px;
+  border-radius: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.tooltip-container:hover .tooltip-texto {
+  opacity: 1;
+  visibility: visible;
+}
+
+.slideshow-lateral {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.slide-lat {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: ciclo-lateral 12s infinite;
+}
+
+.slide-lat:nth-child(1) { animation-delay: 0s; }
+.slide-lat:nth-child(2) { animation-delay: 4s; }
+.slide-lat:nth-child(3) { animation-delay: 8s; }
+
+@keyframes ciclo-lateral {
+  0%   { opacity: 0; transform: translateX(30px); }
+  5%   { opacity: 1; transform: translateX(0); }
+  28%  { opacity: 1; transform: translateX(0); }
+  33%  { opacity: 0; transform: translateX(-30px); }
+  100% { opacity: 0; }
+}
+
+/* ---------- CENTRO (flex) ---------- */
+.slideshow-central {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 600px;
+  height: 360px;
+  background-color: #241d3d;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.2);
+  border: 1px solid rgba(255, 46, 136, 0.2);
+}
+
+.slide-item {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  animation: ciclo-centro 16s infinite;
+}
+
+.slide-item:nth-child(1) { animation-delay: 0s; }
+.slide-item:nth-child(2) { animation-delay: 4s; }
+.slide-item:nth-child(3) { animation-delay: 8s; }
+.slide-item:nth-child(4) { animation-delay: 12s; }
+
+.slide-item + .slide-item {
+  z-index: 0;
+}
+
+.slide-item > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.resumen-juego {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(13, 11, 26, 0.85);
+  color: #f0eaff;
+  border-top: 2px solid #ff2e88;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.slide-item:hover .resumen-juego {
+  opacity: 1;
+}
+
+.slideshow-central:hover .slide-item {
+  animation-play-state: paused;
+}
+
+@keyframes ciclo-centro {
+  0%   { opacity: 0; pointer-events: none; }
+  3%   { opacity: 1; pointer-events: auto; }
+  20%  { opacity: 1; pointer-events: auto; }
+  25%  { opacity: 0; pointer-events: none; }
+  100% { opacity: 0; pointer-events: none; }
+}
+
+.metodos-pago {
+  width: 220px;
+  background-color: #1c1630;
+  border: 1px solid rgba(0, 229, 255, 0.15);
+  border-radius: 10px;
+  padding: 15px;
+  color: #f0eaff;
+}
+
+.metodos-pago h3 {
+  margin: 0 0 15px 0;
+  font-size: 16px;
+  text-align: center;
+}
+
+.lista-pagos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lista-pagos > li {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  align-items: center;
+  gap: 10px;
+  background-color: #2a2245;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+.lista-pagos > li:hover {
+  background-color: #352a58;
+  box-shadow: 0 0 8px #00e5ff;
+}
+
+.lista-pagos i {
+  font-size: 20px;
+  justify-self: center;
+}
+
+.badge-pago {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  justify-self: center;
+}
+
+.badge-nequi { background-color: #642EA1; }      
+.badge-daviplata { background-color: #E4032E; }  
+.badge-pse { background-color: #00308F; }        
+.fa-paypal {
+  color: #009cde;
 }

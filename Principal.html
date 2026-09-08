@@ -16,6 +16,11 @@
       <h1>GameL0ft</h1>
     </header>
 
+    <div class="buscador-container">
+      <input type="text" class="buscador" placeholder="Buscar juegos..." />
+      <i class="fa-solid fa-magnifying-glass icono-buscar"></i>
+    </div>
+
     <label for=""> Plataformas </label>
     <div class="botones">
       <a href="Steam.html" class="btn-plataforma steam">
@@ -28,11 +33,54 @@
         <i class="fa-brands fa-xbox"></i>
       </a>
     </div>
-    <div class="slideshow">
-    <img src="Resource/Among_us.jpeg" class="slide">
-    <img src="Resource/God_of_war.png" class="slide">
-    <img src="Resource/fornite.png" class="slide">
-    <img src="Resource/hollow_knight.jpg" class="slide">
+    <div class="seccion-contenido">
+
+  <aside class="banner-lateral">
+    <div class="titulo-lateral">
+      <span>Juegos destacados de la semana</span>
+      <div class="tooltip-container">
+        <i class="fa-solid fa-circle-question icono-info"></i>
+        <span class="tooltip-texto">Estos juegos son seleccionados según la popularidad entre los usuarios</span>
+      </div>
+    </div>
+    <div class="slideshow-lateral">
+      <img src="Resource/God_of_war.png" class="slide-lat">
+      <img src="Resource/fornite.png" class="slide-lat">
+      <img src="Resource/hollow_knight.jpg" class="slide-lat">
+    </div>
+  </aside>
+
+  <div class="slideshow-central">
+    <div class="slide-item">
+      <img src="Resource/Among_us.jpeg">
+      <div class="resumen-juego"><p>Among Us: encuentra al impostor antes de que sea tarde.</p></div>
+    </div>
+    <div class="slide-item">
+      <img src="Resource/God_of_war.png">
+      <div class="resumen-juego"><p>God of War: Kratos y Atreus viajan por los reinos nórdicos.</p></div>
+    </div>
+    <div class="slide-item">
+      <img src="Resource/fornite.png">
+      <div class="resumen-juego"><p>Fortnite: batalla royale con construcción y eventos en vivo.</p></div>
+    </div>
+    <div class="slide-item">
+      <img src="Resource/hollow_knight.jpg">
+      <div class="resumen-juego"><p>Hollow Knight: explora un reino subterráneo lleno de secretos.</p></div>
+    </div>
+  </div>
+
+  <aside class="metodos-pago">
+    <h3>Métodos de pago</h3>
+    <ul class="lista-pagos">
+      <li><i class="fa-brands fa-paypal"></i><span>PayPal</span></li>
+      <li><i class="fa-brands fa-cc-visa"></i><span>Visa</span></li>
+      <li><i class="fa-brands fa-cc-mastercard"></i><span>Mastercard</span></li>
+      <li><span class="badge-pago badge-nequi">N</span><span>Nequi</span></li>
+      <li><span class="badge-pago badge-daviplata">D</span><span>Daviplata</span></li>
+      <li><span class="badge-pago badge-pse">PSE</span><span>PSE</span></li>
+    </ul>
+  </aside>
+
 </div>
   </body>
 </html>
