@@ -11,7 +11,7 @@ header {
   display: flex;
   align-items: center;
   position: relative;
-  padding: 8px 15px;   
+  padding: 8px 15px;
   margin: 20px;
   border-radius: 10px;
   border-bottom: 3px solid #00e5ff;
@@ -197,29 +197,80 @@ label {
   border-radius: 8px;
 }
 
-.slide-lat {
+.slide-item-lat {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
   opacity: 0;
+  pointer-events: none;
   animation: ciclo-lateral 12s infinite;
 }
 
-.slide-lat:nth-child(1) { animation-delay: 0s; }
-.slide-lat:nth-child(2) { animation-delay: 4s; }
-.slide-lat:nth-child(3) { animation-delay: 8s; }
-
-@keyframes ciclo-lateral {
-  0%   { opacity: 0; transform: translateX(30px); }
-  5%   { opacity: 1; transform: translateX(0); }
-  28%  { opacity: 1; transform: translateX(0); }
-  33%  { opacity: 0; transform: translateX(-30px); }
-  100% { opacity: 0; }
+.slide-item-lat:nth-child(1) {
+  animation-delay: 0s;
+}
+.slide-item-lat:nth-child(2) {
+  animation-delay: 4s;
+}
+.slide-item-lat:nth-child(3) {
+  animation-delay: 8s;
 }
 
-/* ---------- CENTRO (flex) ---------- */
+.slide-item-lat > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.resumen-lateral {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(13, 11, 26, 0.85);
+  color: #f0eaff;
+  border-top: 2px solid #ff2e88;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 15px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.slide-item-lat:hover .resumen-lateral {
+  opacity: 1;
+}
+
+.slideshow-lateral:hover .slide-item-lat {
+  animation-play-state: paused;
+}
+
+@keyframes ciclo-lateral {
+  0% {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(30px);
+  }
+  4.2% {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+  }
+  29.2% {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+  }
+  33.3% {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
 .slideshow-central {
   display: flex;
   justify-content: center;
@@ -238,13 +289,37 @@ label {
   position: absolute;
   inset: 0;
   opacity: 0;
-  animation: ciclo-centro 16s infinite;
+  pointer-events: none;
+  animation: ciclo-centro 36s infinite;
 }
 
-.slide-item:nth-child(1) { animation-delay: 0s; }
-.slide-item:nth-child(2) { animation-delay: 4s; }
-.slide-item:nth-child(3) { animation-delay: 8s; }
-.slide-item:nth-child(4) { animation-delay: 12s; }
+.slide-item:nth-child(1) {
+  animation-delay: 0s;
+}
+.slide-item:nth-child(2) {
+  animation-delay: 4s;
+}
+.slide-item:nth-child(3) {
+  animation-delay: 8s;
+}
+.slide-item:nth-child(4) {
+  animation-delay: 12s;
+}
+.slide-item:nth-child(5) {
+  animation-delay: 16s;
+}
+.slide-item:nth-child(6) {
+  animation-delay: 20s;
+}
+.slide-item:nth-child(7) {
+  animation-delay: 24s;
+}
+.slide-item:nth-child(8) {
+  animation-delay: 28s;
+}
+.slide-item:nth-child(9) {
+  animation-delay: 32s;
+}
 
 .slide-item + .slide-item {
   z-index: 0;
@@ -280,11 +355,26 @@ label {
 }
 
 @keyframes ciclo-centro {
-  0%   { opacity: 0; pointer-events: none; }
-  3%   { opacity: 1; pointer-events: auto; }
-  20%  { opacity: 1; pointer-events: auto; }
-  25%  { opacity: 0; pointer-events: none; }
-  100% { opacity: 0; pointer-events: none; }
+  0% {
+    opacity: 0;
+    pointer-events: none;
+  }
+  1.4% {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  9.7% {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  11.1% {
+    opacity: 0;
+    pointer-events: none;
+  }
+  100% {
+    opacity: 0;
+    pointer-events: none;
+  }
 }
 
 .metodos-pago {
@@ -345,9 +435,15 @@ label {
   justify-self: center;
 }
 
-.badge-nequi { background-color: #642EA1; }      
-.badge-daviplata { background-color: #E4032E; }  
-.badge-pse { background-color: #00308F; }        
+.badge-nequi {
+  background-color: #642ea1;
+}
+.badge-daviplata {
+  background-color: #e4032e;
+}
+.badge-pse {
+  background-color: #00308f;
+}
 .fa-paypal {
   color: #009cde;
 }
