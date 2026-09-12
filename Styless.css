@@ -496,9 +496,7 @@ header h1 {
   border: 1px solid rgba(0, 229, 255, 0.15);
   border-radius: 10px;
   overflow: hidden;
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .tarjeta-juego:hover {
@@ -547,9 +545,7 @@ header h1 {
 }
 
 body.fondo-steam {
-  background-image:
-    linear-gradient(rgba(13, 11, 26, 0.65), rgba(13, 11, 26, 0.65)),
-    url("Resource/FondoSteam.jpg");
+  background-image: linear-gradient(rgba(13, 11, 26, 0.65), rgba(13, 11, 26, 0.65)), url("Resource/FondoSteam.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -557,9 +553,7 @@ body.fondo-steam {
 }
 
 body.fondo-ps {
-  background-image:
-    linear-gradient(rgba(13, 11, 26, 0.65), rgba(13, 11, 26, 0.65)),
-    url("Resource/FondoPs.avif");
+  background-image: linear-gradient(rgba(13, 11, 26, 0.65), rgba(13, 11, 26, 0.65)), url("Resource/FondoPs.avif");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -567,9 +561,7 @@ body.fondo-ps {
 }
 
 body.fondo-xbox {
-  background-image:
-    linear-gradient(rgba(13, 11, 26, 0.65), rgba(13, 11, 26, 0.65)),
-    url("Resource/FondoXbox.jpg");
+  background-image: linear-gradient(rgba(13, 11, 26, 0.65), rgba(13, 11, 26, 0.65)), url("Resource/FondoXbox.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -577,9 +569,7 @@ body.fondo-xbox {
 }
 
 body.fondo-principal {
-  background-image:
-    linear-gradient(rgba(13, 11, 26, 0.65), rgba(13, 11, 26, 0.65)),
-    url("Resource/FondoPrincipal.jpg");
+  background-image: linear-gradient(rgba(13, 11, 26, 0.65), rgba(13, 11, 26, 0.65)), url("Resource/FondoPrincipal.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
