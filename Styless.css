@@ -543,3 +543,27 @@ header h1 {
   font-weight: 700;
   font-size: 15px;
 }
+
+body.fondo-steam {
+  background-image: linear-gradient(rgba(13, 11, 26, 0.85), rgba(13, 11, 26, 0.85)), url("Resource/FondoSteam.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+body.fondo-ps {
+  background-image: linear-gradient(rgba(13, 11, 26, 0.85), rgba(13, 11, 26, 0.85)), url("Resource/FondoPs.avif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+body.fondo-xbox {
+  background-image: linear-gradient(rgba(13, 11, 26, 0.85), rgba(13, 11, 26, 0.85)), url("Resource/FondoXbox.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
